@@ -93,30 +93,27 @@ class _NewItemState extends State<NewItem> {
                   const SizedBox(width: 8),
                   Expanded(
                     child: DropdownButtonFormField(
-                      value: _selectedCategory,
-                      items: [
-                        for (final category in categories.entries)
-                          DropdownMenuItem(
-                            value: category.value,
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 16,
-                                  height: 16,
-                                  color: category.value.color,
-                                ),
-                                const SizedBox(width: 6),
-                                Text(category.value.title),
-                              ],
+                        value: _selectedCategory,
+                        items: [
+                          for (final category in categories.entries)
+                            DropdownMenuItem(
+                              value: category.value,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    color: category.value.color,
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text(category.value.title),
+                                ],
+                              ),
                             ),
-                          ),
-                      ],
-                      onChanged: (value) {
-                        setState(() {
+                        ],
+                        onChanged: (value) {
                           _selectedCategory = value!;
-                        });
-                      },
-                    ),
+                        }),
                   ),
                 ],
               ),
